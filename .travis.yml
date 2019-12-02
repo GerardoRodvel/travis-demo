@@ -15,3 +15,11 @@ script:
 - ng lint
 - npm run test-headless
 - ng build --prod --base-href https://GerardoRodvel.github.io/travis-demo/ 
+
+deploy:
+   provider: pages
+   skip_cleanup: true
+   github_token: $8c46907039ad17681a7ecbf663fb31bd28fa5ba6
+   local_dir: dist/travis-demo
+   on:
+    branch: master
