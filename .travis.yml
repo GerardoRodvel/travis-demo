@@ -17,9 +17,9 @@ script:
 - ng build --prod --base-href https://GerardoRodvel.github.io/travis-demo/ 
 
 deploy:
-   provider: pages
-   skip_cleanup: true
-   github_token: $3687093612e8a680ea16898046e24a7a782da959
-   local_dir: dist/travis-demo
-   on:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/travis-demo
+  on:
     branch: master
