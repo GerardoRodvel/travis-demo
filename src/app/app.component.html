@@ -87,12 +87,12 @@
   }
 
   .card {
-    border-radius: 20px;
+    border-radius: 4px;
     border: 1px solid #eee;
-    background-color: #eeecf8b9;
+    background-color: #fafafa;
     height: 40px;
-    width: 280px;
-    margin: 0 20px 16px;
+    width: 200px;
+    margin: 0 8px 16px;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -116,22 +116,22 @@
   }
 
   .card-container .card:not(.highlight-card):hover {
-    transform: translateY(-18px);
-    box-shadow: 0 18px 17px rgba(black, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(black, 0.35);
   }
 
   .card-container .card:not(.highlight-card):hover .material-icons path {
-    fill: rgb(25, 200, 45);
+    fill: rgb(105, 103, 103);
   }
 
   .card.highlight-card {
-    background-color: #feffff50;
-    color: rgba(0, 0, 0, 0.748);
+    background-color: #1976d2;
+    color: white;
     font-weight: 600;
+    border: none;
     width: auto;
     min-width: 30%;
     position: relative;
-    cursor: pointer;
   }
 
   .card.card.highlight-card span {
@@ -379,7 +379,43 @@
 
   </div>
 
+  <!-- Next Steps -->
+  <h2>Next Steps</h2>
+  <p>What do you want to do next with your app?</p>
 
+  <input type="hidden" #selection>
+
+  <div class="card-container">
+    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>New Component</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
+        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Angular Material</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Add Dependency</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'test'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Run and Watch Tests</span>
+    </div>
+
+    <div class="card card-small" (click)="selection.value = 'build'" tabindex="0">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+
+      <span>Build for Production</span>
+    </div>
+  </div>
 
   <!-- Terminal -->
   <div class="terminal" [ngSwitch]="selection.value">
